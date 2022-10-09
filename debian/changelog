@@ -1,3 +1,9 @@
+qt6-quicktimeline (6.2.4.1-1+dde) stable; urgency=medium
+
+  * Adapt to V23.
+
+ -- Lu YaNing <luyaning@uniontech.com>  Sun, 09 Oct 2022 16:39:29 +0800
+
 qt6-quicktimeline (6.2.4-1+dde) stable; urgency=medium
 
   * ['Rebuild  against by  current gcc 11.2']
