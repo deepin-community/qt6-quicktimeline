@@ -1,31 +1,5 @@
-/****************************************************************************
-**
-** Copyright (C) 2019 The Qt Company Ltd.
-** Contact: https://www.qt.io/licensing/
-**
-** This file is part of Qt Quick Designer Components.
-**
-** $QT_BEGIN_LICENSE:GPL$
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and The Qt Company. For licensing terms
-** and conditions see https://www.qt.io/terms-conditions. For further
-** information use the contact form at https://www.qt.io/contact-us.
-**
-** GNU General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU
-** General Public License version 3 or (at your option) any later version
-** approved by the KDE Free Qt Foundation. The licenses are as published by
-** the Free Software Foundation and appearing in the file LICENSE.GPL3
-** included in the packaging of this file. Please review the following
-** information to ensure the GNU General Public License requirements will
-** be met: https://www.gnu.org/licenses/gpl-3.0.html.
-**
-** $QT_END_LICENSE$
-**
-****************************************************************************/
+// Copyright (C) 2019 The Qt Company Ltd.
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 #include "qquicktimeline_p.h"
 
@@ -91,7 +65,7 @@ void QQuickTimelinePrivate::append_keyframe(QQmlListProperty<QQuickKeyframeGroup
 qsizetype QQuickTimelinePrivate::keyframe_count(QQmlListProperty<QQuickKeyframeGroup> *list)
 {
     auto q = static_cast<QQuickTimeline *>(list->object);
-    return q->d_func()->keyframeGroups.count();
+    return q->d_func()->keyframeGroups.size();
 }
 
 QQuickKeyframeGroup* QQuickTimelinePrivate::keyframe_at(QQmlListProperty<QQuickKeyframeGroup> *list, qsizetype pos)
@@ -103,7 +77,7 @@ QQuickKeyframeGroup* QQuickTimelinePrivate::keyframe_at(QQmlListProperty<QQuickK
 void QQuickTimelinePrivate::clear_keyframes(QQmlListProperty<QQuickKeyframeGroup> *list)
 {
     auto q = static_cast<QQuickTimeline *>(list->object);
-    while (q->d_func()->keyframeGroups.count()) {
+    while (q->d_func()->keyframeGroups.size()) {
         QQuickKeyframeGroup *firstKeyframe = q->d_func()->keyframeGroups.at(0);
         q->d_func()->keyframeGroups.removeAll(firstKeyframe);
     }
@@ -119,7 +93,7 @@ void QQuickTimelinePrivate::append_animation(QQmlListProperty<QQuickTimelineAnim
 qsizetype QQuickTimelinePrivate::animation_count(QQmlListProperty<QQuickTimelineAnimation> *list)
 {
     auto q = static_cast<QQuickTimeline *>(list->object);
-    return q->d_func()->animations.count();
+    return q->d_func()->animations.size();
 }
 
 QQuickTimelineAnimation* QQuickTimelinePrivate::animation_at(QQmlListProperty<QQuickTimelineAnimation> *list, qsizetype pos)
@@ -131,7 +105,7 @@ QQuickTimelineAnimation* QQuickTimelinePrivate::animation_at(QQmlListProperty<QQ
 void QQuickTimelinePrivate::clear_animations(QQmlListProperty<QQuickTimelineAnimation> *list)
 {
     auto q = static_cast<QQuickTimeline *>(list->object);
-    while (q->d_func()->animations.count()) {
+    while (q->d_func()->animations.size()) {
         QQuickTimelineAnimation *firstAnimation = q->d_func()->animations.at(0);
         q->d_func()->animations.removeAll(firstAnimation);
     }
