@@ -1,31 +1,5 @@
-/****************************************************************************
-**
-** Copyright (C) 2019 The Qt Company Ltd.
-** Contact: https://www.qt.io/licensing/
-**
-** This file is part of Qt Quick Designer Components.
-**
-** $QT_BEGIN_LICENSE:GPL$
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and The Qt Company. For licensing terms
-** and conditions see https://www.qt.io/terms-conditions. For further
-** information use the contact form at https://www.qt.io/contact-us.
-**
-** GNU General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU
-** General Public License version 3 or (at your option) any later version
-** approved by the KDE Free Qt Foundation. The licenses are as published by
-** the Free Software Foundation and appearing in the file LICENSE.GPL3
-** included in the packaging of this file. Please review the following
-** information to ensure the GNU General Public License requirements will
-** be met: https://www.gnu.org/licenses/gpl-3.0.html.
-**
-** $QT_END_LICENSE$
-**
-****************************************************************************/
+// Copyright (C) 2019 The Qt Company Ltd.
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 #include "qquickkeyframe_p.h"
 
@@ -159,7 +133,7 @@ void QQuickKeyframeGroupPrivate::append_keyframe(QQmlListProperty<QQuickKeyframe
 qsizetype QQuickKeyframeGroupPrivate::keyframe_count(QQmlListProperty<QQuickKeyframe> *list)
 {
     auto q = static_cast<QQuickKeyframeGroup *>(list->object);
-    return q->d_func()->keyframes.count();
+    return q->d_func()->keyframes.size();
 }
 
 QQuickKeyframe* QQuickKeyframeGroupPrivate::keyframe_at(QQmlListProperty<QQuickKeyframe> *list, qsizetype pos)
@@ -171,10 +145,8 @@ QQuickKeyframe* QQuickKeyframeGroupPrivate::keyframe_at(QQmlListProperty<QQuickK
 void QQuickKeyframeGroupPrivate::clear_keyframes(QQmlListProperty<QQuickKeyframe> *list)
 {
     auto q = static_cast<QQuickKeyframeGroup *>(list->object);
-    while (q->d_func()->keyframes.count()) {
-        QQuickKeyframe *firstKeyframe = q->d_func()->keyframes.at(0);
-        q->d_func()->keyframes.removeAll(firstKeyframe);
-    }
+    q->d_func()->keyframes.clear();
+    q->d_func()->setupKeyframes();
 }
 
 class QQuickKeyframePrivate : public QObjectPrivate
@@ -371,7 +343,7 @@ void QQuickKeyframeGroup::setKeyframeSource(const QUrl &source)
     if (d->keyframeSource == source)
         return;
 
-    if (d->keyframes.count() > 0) {
+    if (d->keyframes.size() > 0) {
         // Remove possible previously loaded keyframes
         qDeleteAll(d->keyframes);
         d->keyframes.clear();
@@ -398,7 +370,7 @@ void QQuickKeyframeGroup::setKeyframeData(const QByteArray &data)
     if (d->keyframeData == data)
         return;
 
-    if (d->keyframes.count() > 0) {
+    if (d->keyframes.size() > 0) {
         // Remove possible previously loaded keyframes
         qDeleteAll(d->keyframes);
         d->keyframes.clear();
@@ -428,7 +400,7 @@ QVariant QQuickKeyframeGroup::evaluate(qreal frame) const
 
      QQuickKeyframe *lastFrame = &dummy;
 
-    for (auto keyFrame :  qAsConst(d->sortedKeyframes)) {
+    for (auto keyFrame :  std::as_const(d->sortedKeyframes)) {
         if (qFuzzyCompare(frame, keyFrame->frame()) || frame < keyFrame->frame())
             return keyFrame->evaluate(lastFrame, frame, d->userType);
         lastFrame = keyFrame;

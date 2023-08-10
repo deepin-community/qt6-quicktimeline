@@ -2,6 +2,7 @@ usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/6.*/QtQuickTimeline/privat
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/QtQuickTimeline
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/QtQuickTimelineDepends
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/QtQuickTimelineVersion
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/qtquicktimelineexports.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/qtquicktimelineglobal.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/qtquicktimelineversion.h
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6BuildInternals/StandaloneTests/QtQuickTimelineTestsConfig.cmake
@@ -22,6 +23,7 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimeline/Qt6QuickTimelineVersionless
 usr/lib/${DEB_HOST_MULTIARCH}/libQt6QuickTimeline.prl
 usr/lib/${DEB_HOST_MULTIARCH}/libQt6QuickTimeline.so
 usr/lib/${DEB_HOST_MULTIARCH}/metatypes/qt6quicktimeline_none_metatypes.json
+usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/Qt6QuickTimeline.pc
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_quicktimeline.pri
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_quicktimeline_private.pri
 usr/share/qt6/modules/QuickTimeline.json

@@ -1,17 +1,22 @@
 #!/usr/bin/make -f
-#export DH_VERBOSE = 1
 
-# Use already defined DEB_HOST_* variables.
 include /usr/share/dpkg/architecture.mk
 
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all optimize=+lto
+
+# QT_HOST_PATH isn't passed in cross-builds
+ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
+	cmake_extra_args += -DQT_HOST_PATH=/usr
+endif
 
 %:
 	dh $@ --with pkgkde_symbolshelper --buildsystem=cmake+ninja
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH)
+		--log-level=STATUS \
+		-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH) \
+		$(cmake_extra_args)
 
 execute_after_dh_auto_install:
 	# Reproducible builds: remove build paths from .prl files
