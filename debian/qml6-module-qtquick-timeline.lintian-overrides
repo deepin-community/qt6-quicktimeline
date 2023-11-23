@@ -1,0 +1,3 @@
+# libqt6quicktimeline6 is a private library installed in a public path
+qml6-module-qtquick-timeline: package-name-doesnt-match-sonames libQt6QuickTimeline6
+qml6-module-qtquick-timeline: no-symbols-control-file usr/lib/*/libQt6QuickTimeline.so.6.*

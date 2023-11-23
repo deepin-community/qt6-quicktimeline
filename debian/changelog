@@ -1,3 +1,22 @@
+qt6-quicktimeline (6.6.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.6.0).
+  * Bump Qt B-Ds to 6.6.0.
+  * Update list of installed files.
+  * Remove binary package libqt6quicktimeline6.
+  * Update d/changelog.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 16 Nov 2023 22:47:15 +0100
+
+qt6-quicktimeline (6.4.2-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Remove build-dependency on libqt6opengl6-dev as it has been merged
+    into qt6-base-dev.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 14 Oct 2023 20:27:48 +0200
+
 qt6-quicktimeline (6.4.2-1) unstable; urgency=medium
 
   [ Patrick Franz ]
