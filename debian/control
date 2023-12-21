@@ -12,10 +12,10 @@ Build-Depends: cmake (>= 3.24~),
                ninja-build,
                pkg-config,
                pkg-kde-tools,
-               qt6-base-dev (>= 6.6.0+dfsg~),
-               qt6-base-private-dev (>= 6.6.0+dfsg~),
-               qt6-declarative-dev (>= 6.6.0+dfsg~),
-               qt6-declarative-private-dev (>= 6.6.0+dfsg~),
+               qt6-base-dev (>= 6.6.1+dfsg~),
+               qt6-base-private-dev (>= 6.6.1+dfsg~),
+               qt6-declarative-dev (>= 6.6.1+dfsg~),
+               qt6-declarative-private-dev (>= 6.6.1+dfsg~),
 Standards-Version: 4.6.2
 Homepage: https://www.qt.io/developers/
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-quicktimeline
