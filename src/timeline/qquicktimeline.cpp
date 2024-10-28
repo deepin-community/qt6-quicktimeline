@@ -5,7 +5,6 @@
 
 #include <QtCore/qmath.h>
 #include <QtGui/qpainter.h>
-#include <QtQuick/private/qquickitem_p.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -114,7 +113,7 @@ void QQuickTimelinePrivate::clear_animations(QQmlListProperty<QQuickTimelineAnim
 /*!
     \qmltype Timeline
     \inherits QtObject
-    \instantiates QQuickTimeline
+    \nativetype QQuickTimeline
     \inqmlmodule QtQuick.Timeline
     \ingroup qtqmltypes
 

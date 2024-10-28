@@ -1,4 +1,8 @@
 usr/lib/${DEB_HOST_MULTIARCH}/libQt6QuickTimeline.so.*
+usr/lib/${DEB_HOST_MULTIARCH}/libQt6QuickTimelineBlendTrees.so.*
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/qml/QtQuick/Timeline/libqtquicktimelineplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/qml/QtQuick/Timeline/BlendTrees/libqtquicktimelineblendtreesplugin.so
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/qml/QtQuick/Timeline/plugins.qmltypes
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/qml/QtQuick/Timeline/BlendTrees/plugins.qmltypes
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/qml/QtQuick/Timeline/qmldir
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/qml/QtQuick/Timeline/BlendTrees/qmldir
