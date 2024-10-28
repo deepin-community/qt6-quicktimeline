@@ -1,4 +1,5 @@
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/6.*/QtQuickTimeline/private/*.h
+usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimelineBlendTrees/6.*/QtQuickTimelineBlendTrees/private/*.h
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/QtQuickTimeline
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/QtQuickTimelineDepends
 usr/include/${DEB_HOST_MULTIARCH}/qt6/QtQuickTimeline/QtQuickTimelineVersion
@@ -12,6 +13,8 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginCo
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfigVersionImpl.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets-none.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/*.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimelineBlendTrees/*.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimeline/Qt6QuickTimelineAdditionalTargetInfo.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimeline/Qt6QuickTimelineConfig.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimeline/Qt6QuickTimelineConfigVersion.cmake
@@ -21,9 +24,14 @@ usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimeline/Qt6QuickTimelineTargets-non
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimeline/Qt6QuickTimelineTargets.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6QuickTimeline/Qt6QuickTimelineVersionlessTargets.cmake
 usr/lib/${DEB_HOST_MULTIARCH}/libQt6QuickTimeline.prl
+usr/lib/${DEB_HOST_MULTIARCH}/libQt6QuickTimelineBlendTrees.prl
 usr/lib/${DEB_HOST_MULTIARCH}/libQt6QuickTimeline.so
 usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/Qt6QuickTimeline.pc
+usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/Qt6QuickTimelineBlendTrees.pc
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/metatypes/qt6quicktimeline_none_metatypes.json
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_quicktimeline.pri
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_quicktimeline_private.pri
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees.pri
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees_private.pri
 usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/QuickTimeline.json
+usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/QuickTimelineBlendTrees.json

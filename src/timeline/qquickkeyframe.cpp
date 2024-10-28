@@ -10,7 +10,6 @@
 #include <QtCore/QVariantAnimation>
 #include <QtCore/qmath.h>
 #include <QtGui/qpainter.h>
-#include <QtQuick/private/qquickitem_p.h>
 #include <QtQml/QQmlProperty>
 #include <QtQml/QQmlFile>
 #include <QtQml/QQmlContext>
@@ -88,6 +87,8 @@ void QQuickKeyframeGroupPrivate::loadKeyframes(bool fromBinary)
         reader.addData(keyframeData);
     }
 
+    auto cleanup = qScopeGuard([&dataFile] { dataFile.close(); });
+
     // Check that file is standard keyframes CBOR and get the version
     int version = readKeyframesHeader(reader);
 
@@ -119,7 +120,6 @@ void QQuickKeyframeGroupPrivate::loadKeyframes(bool fromBinary)
 
     // Leave root array
     reader.leaveContainer();
-
 }
 
 void QQuickKeyframeGroupPrivate::append_keyframe(QQmlListProperty<QQuickKeyframe> *list, QQuickKeyframe *a)
@@ -163,7 +163,7 @@ public:
 /*!
     \qmltype Keyframe
     \inherits QtObject
-    \instantiates QQuickKeyframe
+    \nativetype QQuickKeyframe
     \inqmlmodule QtQuick.Timeline
     \ingroup qtqmltypes
 
@@ -237,7 +237,7 @@ QQuickKeyframe::QQuickKeyframe(QQuickKeyframePrivate &dd, QObject *parent)
 /*!
     \qmltype KeyframeGroup
     \inherits QtObject
-    \instantiates QQuickKeyframeGroup
+    \nativetype QQuickKeyframeGroup
     \inqmlmodule QtQuick.Timeline
     \ingroup qtqmltypes
 

@@ -1,8 +1,8 @@
-// Copyright (C) 2021 The Qt Company Ltd.
+// Copyright (C) 2023 The Qt Company Ltd.
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
-#ifndef QTQUICKTIMELINEGLOBAL_P_H
-#define QTQUICKTIMELINEGLOBAL_P_H
+#ifndef QTQUICKTIMELINEBLENDTREESGLOBAL_P_H
+#define QTQUICKTIMELINEBLENDTREESGLOBAL_P_H
 
 //
 //  W A R N I N G
@@ -15,7 +15,7 @@
 // We mean it.
 //
 
-#include "qtquicktimelineglobal.h"
-#include <QtQuickTimeline/qtquicktimelineexports.h>
+#include "qtquicktimelineblendtreesglobal.h"
+#include <QtQuickTimelineBlendTrees/private/qtquicktimelineblendtreesexports_p.h>
 
-#endif // QTQUICKTIMELINEGLOBAL_P_H
+#endif // QTQUICKTIMELINEBLENDTREESGLOBAL_P_H
