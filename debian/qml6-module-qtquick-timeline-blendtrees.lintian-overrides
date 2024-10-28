@@ -1,0 +1,3 @@
+# libqt6quicktimelineblendtrees6 is a private library installed in a public path
+qml6-module-qtquick-timeline-blendtrees: package-name-doesnt-match-sonames libQt6QuickTimelineBlendTrees6
+qml6-module-qtquick-timeline-blendtrees: no-symbols-control-file usr/lib/*/libQt6QuickTimelineBlendTrees.so.6.*
