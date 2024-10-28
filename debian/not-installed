@@ -1,0 +1,13 @@
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6BuildInternals/StandaloneTests/QtQuickTimelineTestsConfig.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginAdditionalTargetInfo.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfig.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfigVersion.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfigVersionImpl.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets-none.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginAdditionalTargetInfo.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfig.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfigVersion.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfigVersionImpl.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets-none.cmake
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets.cmake

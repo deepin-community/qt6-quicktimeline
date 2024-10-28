@@ -10,13 +10,13 @@ Build-Depends: cmake (>= 3.24~),
                libvulkan-dev [linux-any],
                libxcb-xkb-dev,
                ninja-build,
-               pkg-config,
                pkg-kde-tools,
+               pkgconf,
                qt6-base-dev (>= 6.8.0+dfsg~),
                qt6-base-private-dev (>= 6.8.0+dfsg~),
                qt6-declarative-dev (>= 6.8.0+dfsg~),
                qt6-declarative-private-dev (>= 6.8.0+dfsg~),
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Homepage: https://www.qt.io/developers/
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-quicktimeline
 Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/qt6-quicktimeline.git
@@ -34,12 +34,23 @@ Description: Qt 6 Quick Timeline QML module
  .
  This package provides the QML module for Qt 6 Quick Timeline.
 
+Package: qml6-module-qtquick-timeline-blendtrees
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends},
+Description: Qt 6 Quick Timeline BlendTrees QML module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package provides the QML module for Qt 6 Quick Timeline BlendTrees.
+
 Package: qt6-quicktimeline-dev
-Provides: libqt6quicktimeline6-dev (= ${binary:Version}),
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: qml6-module-qtquick-timeline (= ${binary:Version}), ${misc:Depends},
+Depends: qml6-module-qtquick-timeline (= ${binary:Version}),
+         qml6-module-qtquick-timeline-blendtrees (= ${binary:Version}),
+         ${misc:Depends},
 Breaks: libqt6quicktimeline6-dev (<< 6.4.1-2~),
 Replaces: libqt6quicktimeline6-dev (<< 6.4.1-2~),
 Description: Qt 6 Quick Timeline - development files

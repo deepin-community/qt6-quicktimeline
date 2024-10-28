@@ -1,3 +1,44 @@
+qt6-quicktimeline (6.8.0-0deepin) unstable; urgency=medium
+
+  * New upstream release (6.8.0).
+
+ -- lichenggang <lichenggang@deepin.org>  Mon, 28 Oct 2024 16:02:39 +0800
+
+qt6-quicktimeline (6.7.2-2) unstable; urgency=medium
+
+  * Remove virtual package libqt6quicktimeline6-dev.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 05 Oct 2024 01:57:59 +0200
+
+qt6-quicktimeline (6.7.2-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.7.2).
+  * Bump Qt B-Ds to 6.7.2.
+  * Update list of installed files and new binary package qml6-module-
+    qtquick-timeline-blendtrees.
+  * Bump Standards-Version to 4.7.0 (no changes needed).
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 31 Aug 2024 21:07:36 +0200
+
+qt6-quicktimeline (6.6.2-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Upload to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 06 Jun 2024 18:34:02 +0200
+
+qt6-quicktimeline (6.6.2-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.6.2).
+  * Bump Qt B-Ds to 6.6.2.
+  * Build-depend on pkgconf instead of pkg-config as the latter has been
+    superseded by the former.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 16 Feb 2024 22:36:11 +0100
+
 qt6-quicktimeline (6.6.1-1) experimental; urgency=medium
 
   [ Patrick Franz ]
