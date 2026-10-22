@@ -1,10 +1,11 @@
 Source: qt6-quicktimeline
 Section: libs
-Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Patrick Franz <deltaone@debian.org>,
-Build-Depends: cmake (>= 3.24~),
-               debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               cmake (>= 3.24~),
                libgl-dev,
                libssl-dev,
                libvulkan-dev [linux-any],
@@ -12,22 +13,23 @@ Build-Depends: cmake (>= 3.24~),
                ninja-build,
                pkg-kde-tools,
                pkgconf,
-               qt6-base-dev (>= 6.8.0+dfsg~),
-               qt6-base-private-dev (>= 6.8.0+dfsg~),
-               qt6-declarative-dev (>= 6.8.0+dfsg~),
-               qt6-declarative-private-dev (>= 6.8.0+dfsg~),
-Standards-Version: 4.7.0
+               qt6-base-dev (>= 6.11.2+dfsg~),
+               qt6-base-private-dev (>= 6.11.2+dfsg~),
+               qt6-declarative-dev (>= 6.11.2+dfsg~),
+               qt6-declarative-private-dev (>= 6.11.2+dfsg~),
+Standards-Version: 4.7.4
 Homepage: https://www.qt.io/developers/
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-quicktimeline
 Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/qt6-quicktimeline.git
-Rules-Requires-Root: no
 
 Package: qml6-module-qtquick-timeline
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends}, ${shlibs:Depends},
-Breaks: libqt6quicktimeline6,
-Replaces: libqt6quicktimeline6,
+Depends: ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends},
+Breaks: libqt6quicktimeline6
+Replaces: libqt6quicktimeline6
 Description: Qt 6 Quick Timeline QML module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -37,7 +39,9 @@ Description: Qt 6 Quick Timeline QML module
 Package: qml6-module-qtquick-timeline-blendtrees
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends}, ${shlibs:Depends},
+Depends: ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends},
 Description: Qt 6 Quick Timeline BlendTrees QML module
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -51,8 +55,6 @@ Multi-Arch: same
 Depends: qml6-module-qtquick-timeline (= ${binary:Version}),
          qml6-module-qtquick-timeline-blendtrees (= ${binary:Version}),
          ${misc:Depends},
-Breaks: libqt6quicktimeline6-dev (<< 6.4.1-2~),
-Replaces: libqt6quicktimeline6-dev (<< 6.4.1-2~),
 Description: Qt 6 Quick Timeline - development files
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.

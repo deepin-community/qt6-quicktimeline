@@ -1,5 +1,6 @@
 // Copyright (C) 2023 The Qt Company Ltd.
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
+// Qt-Security score:significant reason:default
 
 #include "qblendanimationnode_p.h"
 
@@ -16,7 +17,7 @@ QT_BEGIN_NAMESPACE
 
 /*!
     \qmltype BlendAnimationNode
-    \inherits QBlendTreeNode
+    \inherits BlendTreeNode
     \nativetype QBlendAnimationNode
     \inqmlmodule QtQuick.Timeline.BlendTrees
     \ingroup qtqmltypes

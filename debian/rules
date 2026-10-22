@@ -1,23 +1,34 @@
 #!/usr/bin/make -f
 
+# 净室打包:强制 nodoc(等价 DEB_BUILD_PROFILES=nodoc),保证 dpkg-buildpackage -b -us -uc 裸命令可用
+DEB_BUILD_PROFILES := $(filter-out nodoc,$(DEB_BUILD_PROFILES)) nodoc
+export DEB_BUILD_PROFILES
+
 include /usr/share/dpkg/architecture.mk
 
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all optimize=+lto
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 # QT_HOST_PATH isn't passed in cross-builds
 ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
-	cmake_extra_args += -DQT_HOST_PATH=/usr
+	extra_cmake_args += -DQT_HOST_PATH=/usr
+endif
+
+# enable ccache with corresponding build-profile
+ifneq ($(filter ccache,$(DEB_BUILD_PROFILES)),)
+	extra_cmake_args += -DQT_USE_CCACHE=ON
 endif
 
 %:
-	dh $@ --with pkgkde_symbolshelper --buildsystem=cmake+ninja
+	dh $@ --buildsystem=cmake+ninja
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		--log-level=STATUS \
 		-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH) \
-		$(cmake_extra_args)
+		$(extra_cmake_args)
 
 execute_after_dh_auto_install:
 	# Reproducible builds: remove build paths from .prl files
 	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt6*.prl
+	# Reproducible builds: remove kernel version from build artifacts
+	sed -i '/^[[:space:]]*"version":.*deb/d' debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/qt6/modules/*.json
